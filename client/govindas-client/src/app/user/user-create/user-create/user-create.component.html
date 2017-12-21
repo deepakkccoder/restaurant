@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="navbar navbar-expand-sm bg-primary navbar-dark">
+                <div class="navbar-nav">
+                  <div class="nav-item active" >
+                            <h3>Signup </h3>
+                  </div>
+                </div>
+    
+             </div>
+             
+<form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
+    <div class="form-group">
+    <label for="firstName">First Name
+    <input ngModel #firstName = "ngModel" required type="text" name="firstName" class="form-control" id="firstName" placeholder="Enter First Name">
+  </label>
+    </div>
+    <div class="form-group">
+    <label for="lastName">Last Name
+    <input ngModel #lastName = "ngModel" required type="text" name="lastName" class="form-control" id="lastName" placeholder="Enter Last Name">
+    </label>
+  </div>
+    <div class="form-group">
+    <label for="phoneNumber">Phone No
+    <input ngModel #phoneNumber = "ngModel" required type="text" name="phoneNumber" class="form-control" id="phoneNumber" placeholder="Enter Phone No">
+  </label>  
+  </div>
+    <div class="form-group">
+    <label for="email">Email
+    <input ngModel #email = "ngModel" required type="text" name="email" class="form-control" id="email" placeholder="Enter Email">
+  </label>  
+  </div>
+    <h3> Address Detail</h3>
+    <fieldset ngModelGroup="address">
+        <div class="form-group">
+        <label for="metropolitan">Metropolitan 
+        <input ngModel #metropolitan = "ngModel" required type="text" name="metropolitan" class="form-control" id="metropolitan" placeholder="Enter Metropolitan Name">
+      </label>
+        </div>
+        <div class="form-group">
+        <label for="wardNo">Ward No 
+        <input ngModel #wardNo = "ngModel" required type="number" name="wardNo" class="form-control" id="wardNo" placeholder="Enter Ward No">
+      </label>  
+      </div>
+        <div class="form-group">
+        <label for="district">District 
+        <input ngModel #district = "ngModel" required type="text" name="district" class="form-control" id="district" placeholder="Enter District Name">
+      </label> 
+      </div>
+        <div class="form-group">
+        <label for="country">Country 
+        <input ngModel #country = "ngModel" required type="text" name="country" class="form-control" id="country" placeholder="Enter Country Name">  
+      </label>
+      </div>
+      </fieldset>
+    <fieldset ngModelGroup="account">
+        <div class="form-group">
+      <label for="username">Username 
+      <input ngModel #username="ngModel" required type="text" name="username" class="form-control" id="username" placeholder="Enter Username">
+    </label> 
+    </div>
+     <div class="form-group">
+      <label for="password">Password 
+      <input ngModel #password="ngModel" required type="password" name="password" class="form-control" id="password" placeholder="Enter Password">
+    </label>
+    </div>
+    </fieldset>
+    <button type="submit" class="btn btn-info">Submit</button>
+</form>
+</div>

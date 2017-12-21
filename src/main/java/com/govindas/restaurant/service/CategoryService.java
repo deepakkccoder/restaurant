@@ -9,7 +9,7 @@ public interface CategoryService {
     public List<Category> getAll();
     public Category getById(int id);
     public Category getByName(String name);
-    public void delete(int id);
+    public void delete(Integer id);
     public Category save(Category category);
 
 }

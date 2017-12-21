@@ -14,18 +14,17 @@ import java.util.List;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
-
     @GetMapping("/categories")
     public List<Category> getCategories(){
         return categoryService.getAll();
     }
     @GetMapping("/category/{id}")
-    public Category getCategory(@PathParam("id")int id){
+    public Category getCategory(@PathVariable("id")int id){
         return categoryService.getById(id);
     }
 
     @GetMapping("/category/name/{name}")
-    public Category getCategory(@PathParam("name")String name){
+    public Category getCategory(@PathVariable("name")String name){
         return categoryService.getByName(name);
     }
     @PostMapping("/category")
@@ -33,12 +32,12 @@ public class CategoryController {
         return categoryService.save(category);
     }
     @DeleteMapping("/category/{id}")
-    public void delete(@PathParam("id") int id){
+    public void delete(@PathVariable("id") Integer id){
         categoryService.delete(id);
 
     }
     @PutMapping("/category/{id}")
-    public Category edit(@RequestBody Category category, @PathParam("id")int id){
+    public Category edit(@RequestBody Category category, @PathVariable("id")Integer id){
         Category updatedCategory = category;
         return categoryService.save(updatedCategory);
 

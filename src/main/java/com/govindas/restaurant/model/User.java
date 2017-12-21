@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private String phoneNumber;
@@ -15,11 +15,14 @@ public class User {
     private Account account;
     @OneToOne(cascade=CascadeType.ALL)
     private Address address;
-    public int getId() {
+
+
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -61,5 +64,13 @@ public class User {
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

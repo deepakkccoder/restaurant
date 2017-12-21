@@ -1,0 +1,19 @@
+<div class="container">
+  <form #itemForm="ngForm" (ngSubmit)="addItem(itemForm)">
+      <label for="name"> Name
+        <input ngModel #name = "ngModel" required type="text" name="name" class="form-control" id="name" placeholder="Enter Item Name">
+      </label>
+      <label for="description"> Description
+        <input ngModel #description="ngModel" required name="description" type="text" class="form-control" id="description" placeholder="Description">
+      </label>
+      <label for="price">Price 
+        <input ngModel #price="ngModel" required name="price" type="number" class="form-control" id="price">
+      </label>
+      <label for="category">category
+          <select name="category"  [(ngModel)]="category"  required>
+              <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+            </select>
+      </label>
+      <button type="submit" class="btn btn-info">Submit</button>
+  </form>
+</div>

@@ -14,8 +14,6 @@ public class Item {
     private String description;
     @OneToOne
     private Category category;
-    @OneToMany
-    private List<Review> reviews;
     private double price;
 
     public int getId() {
@@ -48,14 +46,6 @@ public class Item {
 
     public void setCategory(Category category) {
         this.category = category;
-    }
-
-    public List<Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(List<Review> reviews) {
-        this.reviews = reviews;
     }
 
     public double getPrice() {
